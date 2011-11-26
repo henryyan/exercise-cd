@@ -93,6 +93,7 @@ Copyright:
           <li>
             <ul style="margin-left:-20px;">
               <li class="sc-item"><a href='retail/retailGoodsList.jsp'>商品管理</a></li>
+              <%--li class="sc-item"><a href='retail/retailSellList.jsp'>已售出商品</a></li> --%>
             </ul>
           </li>
         </ul>

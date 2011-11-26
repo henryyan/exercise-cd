@@ -23,6 +23,7 @@ public class CardUsageRecord implements java.io.Serializable {
 	private String signature;
 	private Double optionTotal;
 	private String usageType;
+	private String relatedId;
 
 	// Constructors
 
@@ -103,5 +104,14 @@ public class CardUsageRecord implements java.io.Serializable {
 	public void setUsageType(String usageType) {
 		this.usageType = usageType;
 	}
+
+	public String getRelatedId() {
+		return relatedId;
+	}
+
+	public void setRelatedId(String relatedId) {
+		this.relatedId = relatedId;
+	}
+	
 
 }

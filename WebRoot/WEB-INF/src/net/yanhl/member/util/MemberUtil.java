@@ -24,6 +24,11 @@ public class MemberUtil {
 	 * 会员卡使用类型-支付
 	 */
 	public static final String CARD_USAGE_TYPE_PAY = "支付";
+	
+	/**
+	 * 会员卡使用类型-购买零售商品
+	 */
+	public static final String CARD_USAGE_TYPE_RETAIL = "购买零售品";
 
 	/**
 	 * 会员卡使用类型-退款

@@ -65,5 +65,10 @@
 			</tr>
 		</table>
 	</div>
+	
+	<div id="retailSellDetailTemplate" class="template">
+		<div class="loading">正在加载信息，请稍候……</div>
+		
+	</div>
 </body>
 </html>

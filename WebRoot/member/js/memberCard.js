@@ -428,7 +428,7 @@ function recordList() {
 		caption: '会员卡使用记录',
         url: 'cardUsageRecordList.do?cardId=0',
         datatype: "json",
-        colNames: ['使用日期', '使用时段', '用卡类型', '操作金额', '详细信息'],
+        colNames: ['使用日期', '使用内容', '用卡类型', '操作金额', '详细信息'],
         colModel: [{
             name: 'usageDate',
 			width: 80,
@@ -450,10 +450,11 @@ function recordList() {
 			width: 50,
 			align: 'center',
 			formatter: function(cellvalue, options, rowObject) {
-				if (rowObject.usageType != '支付') {
+				if (rowObject.usageType == '支付') {
+					return "<a href='#' cui='" + rowObject.id + "' class='view-detail'>查看</a>";
+				} else {
 					return "";
 				}
-				return "<a href='#' cui='" + rowObject.id + "' class='view-detail'>查看</a>";
 			}
 		}],
         jsonReader: {

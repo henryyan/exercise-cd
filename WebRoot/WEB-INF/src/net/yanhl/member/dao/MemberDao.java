@@ -17,6 +17,13 @@ import net.yanhl.member.pojo.MemberCard;
  * @version 1.0.0.20090628
  */
 public interface MemberDao extends BaseDao {
+	
+	/**
+	 * 根据会员卡号查询
+	 * @param memberCardNumber	会员卡号
+	 * @return
+	 */
+	MemberCard findMemberCard(String memberCardNumber);
 
 	/**
 	 * 获取指定场馆的会员卡列表

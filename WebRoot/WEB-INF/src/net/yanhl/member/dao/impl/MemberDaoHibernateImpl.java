@@ -53,4 +53,14 @@ public class MemberDaoHibernateImpl extends BaseDaoHibernate implements MemberDa
 		List<Long> find = getHibernateTemplate().find(hql, new Object[] { venueId, new java.util.Date() });
 		return find.get(0);
 	}
+
+	@Override
+	public MemberCard findMemberCard(String memberCardNumber) {
+		String hql = "from MemberCard where cardNumber=?";
+		List<MemberCard> result = getHibernateTemplate().find(hql, new Object[] { memberCardNumber });
+		if (result.size() == 0) {
+			return null;
+		}
+		return result.get(0);
+	}
 }

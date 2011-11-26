@@ -126,6 +126,12 @@
     <bean name="/retail/retailGoodsList" parent="retailGoodsActionTemplate"/>
     <bean name="/retail/saveRetailGoods" parent="retailGoodsActionTemplate"/>
     <bean name="/retail/checkRepeatRetailName" parent="retailGoodsActionTemplate"/>
+    
+    <bean name="retailSellActionTemplate" singleton="false"
+    	class="net.yanhl.retail.action.RetailSellAction" parent="baseActionTemplate">
+    </bean>
+    <bean name="/retail/sell" parent="retailSellActionTemplate"/>
+    <bean name="/retail/sellList" parent="retailSellActionTemplate"/>
 
 	<!--====================================================================-->
     <!--==================================报表系统==========================-->

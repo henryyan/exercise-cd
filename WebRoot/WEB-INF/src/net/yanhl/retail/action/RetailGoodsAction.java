@@ -21,6 +21,8 @@ import org.apache.struts.action.ActionMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
+ *
+ *	零售商品管理Action
  * 
  * @author HenryYan
  *
@@ -53,12 +55,16 @@ public class RetailGoodsAction extends BaseAction {
 				String strId = jsonObject.getString("id");
 				
 				long longId = Long.parseLong(strId);
+				RetailGoods retailGoods = (RetailGoods) JSONObject.toBean(jsonObject, RetailGoods.class);
 				Object object = getBaseManager().get(RetailGoods.class, longId);
 				if (object == null) {
 					printErrorLabel(response);
 				} else {
-					RetailGoods retailGoods = (RetailGoods) object;
-					getBaseManager().insertOrUpdate(retailGoods);
+					RetailGoods oldRetailGoods = (RetailGoods) object;
+					oldRetailGoods.setDescription(retailGoods.getDescription());
+					oldRetailGoods.setPrice(retailGoods.getPrice());
+					oldRetailGoods.setRetailName(retailGoods.getRetailName());
+					getBaseManager().insertOrUpdate(oldRetailGoods);
 				}
 			}
 		} catch (Exception e) {
@@ -79,12 +85,16 @@ public class RetailGoodsAction extends BaseAction {
 			Long venueId = UserUtil.getCurrentVenueLongId(request);
 			List<RetailGoods> retailGoodsList = getBaseManager().findBy(RetailGoods.class,
 					new String[] { "retailName", "venueId" }, new Object[] { retailName, venueId });
+			String oldId = request.getParameter("id");
 			if (retailGoodsList.isEmpty()) {
 				result.accumulate("exist", false);
 			} else {
-				result.accumulate("exist", true);
 				RetailGoods retailGoods = retailGoodsList.get(0);
-				result.accumulate("retailName", retailGoods.getRetailName());
+				if (oldId.equals(retailGoods.getId().toString())) {
+					result.accumulate("exist", false);
+				} else {
+					result.accumulate("exist", true);
+				}
 			}
 			print(result.toString(), response);
 		} catch (Exception e) {

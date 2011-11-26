@@ -34,5 +34,10 @@
         <property name="usageType" type="java.lang.String">
             <column name="usage_type" length="10" />
         </property>
+        <property name="relatedId" type="java.lang.String">
+            <column name="related_id" length="10">
+            	<comment>使用方ID</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

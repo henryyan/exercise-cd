@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.retail.pojo.RetailSell" table="t_retail_sell">
+    	<comment>零售品销售</comment>
+        <id name="id" type="java.lang.Long" unsaved-value="0">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="venueId" type="java.lang.Long">
+            <column name="VENUE_ID">
+                <comment>场馆ID</comment>
+            </column>
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="amount">
+                <comment>购买数量</comment>
+            </column>
+        </property>
+        <property name="sellDate" type="java.sql.Date">
+            <column name="sell_date">
+            	<comment>出售日期</comment>
+            </column>
+        </property>
+        <property name="retailGoodsId" type="java.lang.Long">
+            <column name="retail_goods_id">
+                <comment>商品ID</comment>
+            </column>
+        </property>
+        <property name="retailName" type="java.lang.String">
+            <column name="retail_name" length="100">
+            	<comment>货品名称</comment>
+            </column>
+        </property>
+        <property name="retailPrice" type="java.lang.Float">
+            <column name="retail_price">
+            	<comment>商品价格</comment>
+            </column>
+        </property>
+        <property name="memberUserName" type="java.lang.String">
+            <column name="member_user_name">
+            	<comment>会员名称</comment>
+            </column>
+        </property>
+        <property name="memberCardNumber" type="java.lang.String">
+            <column name="member_card_number">
+            	<comment>会员卡号</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

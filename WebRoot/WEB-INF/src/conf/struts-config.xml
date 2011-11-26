@@ -135,6 +135,8 @@
 		<action path="/retail/retailGoodsList" scope="request" parameter="retailGoodsList" />
 		<action path="/retail/saveRetailGoods" scope="request" parameter="saveRetailGoods" />
 		<action path="/retail/checkRepeatRetailName" scope="request" parameter="checkRepeatRetailName" />
+		<action path="/retail/sell" scope="request" parameter="sell" />
+		<action path="/retail/sellList" scope="request" parameter="sellList" />
 
 		<!-- ============================ 报表系统 ============================-->
 		<action path="/report/reportDaily" scope="request" parameter="reportDaily" />

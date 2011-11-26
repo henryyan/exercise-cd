@@ -14,7 +14,7 @@ function initRetailGoodsList() {
 	$listjqGrid = $("#list").jqGrid({
         url: 'retailGoodsList.do',
         datatype: "json",
-        colNames: ['商品名称', '价格', '登记日期', '描述'],
+        colNames: ['商品名称', '价格', '登记日期', '描述', '操作'],
         colModel: [{
 			name: 'retailName',
 			align: 'center',
@@ -31,6 +31,12 @@ function initRetailGoodsList() {
 		}, {
 			name: 'description',
 			editable: true
+		}, {
+			name: 'options',
+			align: 'center',
+			formatter: function(cellValue, options, rowObject) {
+				return "<button class='sell'>出售</button>";
+			}
 		}],
         jsonReader: {
             repeatitems: false
@@ -43,7 +49,14 @@ function initRetailGoodsList() {
         viewrecords: true,
         caption: "零售商品列表",
         rownumbers: true,
-        editurl: 'saveRetailGoods.do'
+        editurl: 'saveRetailGoods.do',
+		gridComplete: function() {
+			$('.sell').button({
+				icons: {
+					primary: 'ui-icon-minus'
+				}
+			}).unbind('click').click(sell);
+		}
     }).jqGrid('navGrid', '#pager', {
         add: true,
         edit: true,
@@ -111,6 +124,7 @@ function validatorForRetailGoods(callback) {
                     url: 'checkRepeatRetailName.do',
                     type: 'post',
                     data: {
+						id: $('#id_g').val(),
                         retailName: function() {
                             return $('#retailName').val();
                         }
@@ -163,4 +177,79 @@ function validatorForRetailGoods(callback) {
 			}
         }
     });
+}
+
+/**
+ * 销售
+ */
+function sell() {
+	var rowId = $(this).parents('tr').attr('id');
+	$('#sellTemplate').dialog({
+		modal: true,
+		title: '销售商品-' + $('#list').jqGrid('getCell', rowId, 'retailName'),
+		open: function() {
+			$('#memberCardNumber').blur(loadMemberInfo);
+		},
+		buttons: {
+			取消: function() {
+				$(this).dialog('close');
+			},
+			出售: function() {
+				$.ajax({
+					url: '../retail/sell.do',
+					data: {
+						retailGoodsId: rowId,
+						amount: $('#amount').val(),
+						memberCardNumber: $('#memberCardNumber').val()
+					},
+					beforeSend: function() {
+						var inputOk = $('#amount').val() != '' && $('#memberCardNumber').val() != '';
+						if (!inputOk) {
+							$('#sellTip').show().html("请填写完整信息！");
+						}
+						return inputOk;
+					},
+					success: function(resp) {
+						if (resp == 'success') {
+							alert('出售成功！');
+						} else {
+							$('#sellTip').show().html(resp);
+						}
+					}
+				});
+			}
+		}
+	});
+}
+
+/**
+ * 加载会员卡信息
+ */
+function loadMemberInfo() {
+	$.ajax({
+		url: '../member/loadMemberCard.do',
+		dataType: 'json',
+		data: {
+			userCode: $(this).val()
+		},
+		beforeSend: function(){
+			$('#sellTemplate span').html('');
+		},
+		success: function(card){
+			if (!card) {
+				return;
+			}
+			// 有对应的会员卡信息直接设置信息
+			// 没有则清空
+			if (card.length > 0) {
+				$('#sellTip').hide();
+				$('#memberUserName').text(card[0].name);
+				$('#balance').text(card[0].balance);
+				$('#mobilePhone').text(card[0].mobilePhone);
+			}
+			else {
+				$('#sellTip').show().html('没有此会员卡！');
+			}
+		}
+	});
 }
