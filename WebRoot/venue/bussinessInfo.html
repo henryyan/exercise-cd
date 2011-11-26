@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML>
+    <HEAD>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="imagetoolbar" content="no">
+        <link href="Resources/axurerppage.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript" src="../common/js/jquery-last.js"></script>
+		<script type="text/javascript" src="../common/js/plugin/jquery.form.js"></script>
+		<script type="text/javascript" src="../common/js/common.js"></script>
+		<script type="text/javascript" src="../common/js/list.js"></script>
+		<script type="text/javascript" src="../common/js/form.js"></script>
+    </HEAD>
+    <BODY>
+        <script type="text/javascript">
+			/** **************************定义常量************************ */
+			var common = new Common();
+			var form = new Form(common);
+			
+			// 初始化
+			$(function() {
+				form.initFormSubmit('fieldForm');//初始化表单提交
+				form.initReset();
+				
+				// 加载数据 
+				$.getJSON('/exercise/venue/loadBusinessInfo.do', 
+					function(json){
+						for(key in json) {
+							if(key == 'id') {
+								if ($("#id").length == 0) {
+									var appendId = "<input type='hidden' name='id' id='id' value='" + json['id'] + "'/>";
+									$('#fieldForm').append(appendId);
+								}
+							}
+							$('#' + key).val(json[key]);
+						}
+					}
+				);
+				
+			});
+			
+			/**
+			 * 表单提交前
+			 * 
+			 * @return {Boolean}
+			 */
+			function showRequest(formData, jqForm, options) {
+				//$('#submit').attr('value', '正在保存……').attr('disabled', true);
+				return true;
+				// 检验表单完整性
+				// .........
+			}
+			
+			/**
+			 * 表单响应处理
+			 * 
+			 * @param {}
+			 *            responseText
+			 * @param {}
+			 *            statusText
+			 */
+			function showResponse(responseText, statusText) {
+				if (statusText == 'success' && responseText == 'success') {
+					alert('保存成功');
+				} else {
+					alert('保存失败，请重试或告知管理员');
+				}
+			}
+
+        </script>
+		
+		<form action="/exercise/venue/saveBusinessInfo.do" method="post" id="fieldForm" name="fieldForm">
+			<table style="width: 100%;" border="1" cellspacing="0" id='formTable'>
+				<tr>
+					<td style="width: 10%;">工商注册名：</td>
+					<td style="width: 40%">
+						<input type="text" id="name" name="name"/>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 10%;">开户银行：</td>
+					<td style="width: 40%">
+						<input type="text" id="bank" name="bank"/>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 10%;">银行账号：</td>
+					<td style="width: 40%">
+						<input type="text" id="bankAccount" name="bankAccount"/>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 10%;">负责人：</td>
+					<td style="width: 40%">
+						<input type="text" id="owner" name="owner"/>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 10%;">负责人手机：</td>
+					<td style="width: 40%">
+						<input type="text" id="ownerMobile" name="ownerMobile"/>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<input type='submit' name="submit" id='submit' title="保存" value="保 存" />
+						<input type='button' id='resetBtn' validaor='true' title="重置表单" value="重 置" />
+					</td>
+				</tr>
+			</table>
+		</form>
+    </BODY>
+</HTML>

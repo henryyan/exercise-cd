@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.member.pojo.CardType" table="t_card_type">
+    	<comment>会员卡类型</comment>
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="venueId" type="java.lang.Long">
+            <column name="VENUE_ID">
+                <comment>场馆ID</comment>
+            </column>
+        </property>
+        <property name="typeName" type="java.lang.String">
+            <column name="type_name" length="50">
+            	<comment>会员卡类型名称</comment>
+            </column>
+        </property>
+        <property name="moneyAmount" type="java.lang.Long">
+            <column name="money_amount" length="10">
+            	<comment>卡内金额</comment>
+            </column>
+        </property>
+        <property name="periodMonth" type="java.lang.Integer">
+            <column name="period_month" length="1">
+            	<comment>有效期长度</comment>
+            </column>
+        </property>
+        <property name="discountRate" type="java.lang.Long">
+            <column name="discount_rate" length="5">
+            	<comment>折扣率</comment>
+            </column>
+        </property>
+        <property name="discountTime" type="java.lang.String">
+            <column name="discount_time" length="10">
+            	<comment>折扣范围</comment>
+            </column>
+        </property>
+         <property name="discountType" type="java.lang.String">
+            <column name="DISCOUNT_TYPE" length="2">
+                <comment>打折方式(折扣率、折扣额)</comment>
+            </column>
+        </property>
+        <property name="discountPrice" type="java.lang.Double">
+            <column name="DISCOUNT_PRICE" length="10">
+                <comment>折扣单价</comment>
+            </column>
+        </property>
+        <property name="describtion" type="java.lang.String">
+			<column name="DESCRIBTION" length="255">
+				<comment>会员卡类型描述</comment>
+			</column>
+		</property>
+		<property name="paymentCommision" type="java.lang.Float">
+			<column name="PAYMENT_COMMISION">
+				<comment>协议服务费</comment>
+			</column>
+		</property>
+    </class>
+</hibernate-mapping>

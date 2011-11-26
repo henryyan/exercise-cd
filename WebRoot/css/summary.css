@@ -1,0 +1,191 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    margin: 0px;
+    background: #000000;
+}
+
+#content {
+    margin: 4px;
+    width: 100%;
+    height: 352px;
+    float: left;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+#message {
+    filter: progid:DXImageTransform.microsoft.gradient(gradienttype=0,startColorStr=#990000,endColorStr=#cc0000);
+	width: 737px;
+	height: auto;
+	margin: 12px;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+#list {
+	float: left;
+	height: 80px;
+	width: 356px;
+	margin-left: 25px;
+	margin-top: 15px;
+	font-family: "黑体";
+	font-size: 13px;
+	background-color: #FFFFFF;
+}
+#list thead{ background-color:#990000;}
+#list thead td{color:#FFFFFF;}
+#list   thead   a:link {
+	color: #FFFFFF;
+}
+#list  thead  a:visited {
+	color: #999999;
+}
+#stadiumname {
+	float: left;
+	width: 285px;
+	margin-left: 209px;
+	padding: 8px;
+}
+#stadiumpic {
+	float: left;
+	width: 150px;
+	margin-top: 3px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 77px;
+}
+#sn_one {
+	font-family: '黑体'; font-size: 15px; color: #FFFFFF; padding: 3px;
+}
+#sn_two {
+	font-family: '幼圆'; font-size: 12px; color: #FFFFFF; padding: 3px;
+}
+#sn_weather {
+	font-family: '幼圆'; font-size: 12px; color: #FFFFFF; padding: 3px;
+}
+#r_content{
+	width:592px;
+	background-color:#000000;
+	margin:4px;
+	float: left;
+	margin-top: 0px;
+	height: 353px;
+	padding-left: 200px;
+	padding-right: 200px;
+	}
+#h_content {
+	background-color: #FFFFFF;
+	float: left;
+	width: 992px;
+	margin-top: 0px;
+	margin-right: 4px;
+	margin-bottom: 4px;
+	margin-left: 4px;
+	height: 353px;
+}
+#h_content_1 {
+	background-color: #000000;
+	padding: 20px;
+	padding-top: 0px;
+	float: left;
+	width: 952px;
+}
+#h_content_2 {
+	float: left;
+	background-color: #000000;
+	width: 820px;
+	margin-top: 4px;
+	padding: 10px;
+	padding-top: 0px;
+	height: 74px;
+	margin-bottom: 4px;
+}
+#h_content_3 {
+	float: left;
+	width: 128px;
+	margin-left: 4px;
+	margin-top: 4px;
+	height: 74px;
+	padding: 10px;
+	padding-top: 0px;
+	background-color: #CCCCCC;
+}
+h6{font-family:宋体; font-size:12px; color:#CCCCCC; line-height:17px; text-align:left; letter-spacing:1px;}
+.h_title {
+	font-size: 12px;
+	float: left;
+	line-height: 30px;
+	font-family: "黑体";
+	color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	width: 820px;
+}
+.q {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	line-height: 15px;
+	color: #CCCCCC;
+	float: left;
+	width: 350px;
+}
+#h_content_1 dl {
+	color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	line-height: 20px;
+}
+#h_content_1 dd {
+	font-size: 11px;
+	line-height: 15px;
+	color: #66CC00;
+}
+#h_content_1 dt {
+	font-size: 12px;
+	color: #FFFFFF;
+	font-family: "黑体";
+}
+.a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	line-height: 15px;
+	color: #999999;
+	float: left;
+	width: 470px;
+}
+
+
+#h_content dl {
+	color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	line-height: 20px;
+}
+#h_content dd {
+	font-size: 11px;
+	line-height: 15px;
+	color: #66CC00;
+}
+#h_content dt {
+	font-size: 12px;
+	color: #FFFFFF;
+	font-family: "黑体";
+}
+
+#step_word {
+	color: #FFFFFF;
+	font-family: "幼圆";
+	font-size: 12px;
+	width: 300px;
+	float: left;
+	margin-right: 25px;
+}
+#step {
+	padding: 4px;
+	float: left;
+	width: 944px;
+	margin-top: 20px;
+}
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.field.pojo.FieldOrder" table="t_field_order">
+    	<comment>场地订单</comment>
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="venueId" type="java.lang.Long" not-null="true">
+            <column name="VENUE_ID" />
+        </property>
+        <property name="cardId" type="java.lang.Long" not-null="true">
+            <column name="CARD_ID" />
+        </property>
+        <property name="fieldId" type="java.lang.Long" not-null="true">
+            <column name="FIELD_ID" />
+        </property>
+        <property name="activityId" type="java.lang.Long">
+            <column name="ACTIVITY_ID" />
+        </property>
+        <property name="accountOrderId" type="java.lang.Long">
+            <column name="ACCOUNT_ORDER_ID" />
+        </property>
+        <property name="cardUsageId" type="java.lang.Long">
+            <column name="CARD_USAGE_ID" />
+        </property>
+        <property name="contact" type="java.lang.String">
+            <column name="CONTACT" length="10" />
+        </property>
+        <property name="userCode" type="java.lang.String">
+            <column name="USER_CODE" length="10">
+                <comment>非会员默认为0</comment>
+            </column>
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE" length="13">
+                <comment>会员、非会员都输入电话</comment>
+            </column>
+        </property>
+        <property name="paymentStatus" type="java.lang.Boolean">
+            <column name="PAYMENT_STATUS">
+                <comment>未付款、已付款</comment>
+            </column>
+        </property>
+        <property name="bookTime" type="java.sql.Timestamp">
+            <column name="BOOK_TIME" length="0" />
+        </property>
+        <property name="paymentTime" type="java.sql.Timestamp">
+            <column name="PAYMENT_TIME" length="0" />
+        </property>
+        <property name="paymentSum" type="java.lang.Double">
+            <column name="PAYMENT_SUM" />
+        </property>
+        <property name="standardPrice" type="java.lang.Double">
+            <column name="STANDARD_PRICE" />
+        </property>
+        <property name="paymentStyle" type="java.lang.String">
+            <column name="PAYMENT_STYLE" length="10">
+                <comment>会员卡、现金、银行、支付宝、财付通</comment>
+            </column>
+        </property>
+        <property name="patch" type="java.lang.Boolean" update="false">
+            <column name="PATCH">
+                <comment>是否为补登计</comment>
+            </column>
+        </property>
+        <property name="bookPlateform" type="java.lang.String" update="false">
+            <column name="BOOK_PLATEFORM">
+                <comment>由哪个平台生成的活动订单</comment>
+            </column>
+        </property>
+        <property name="paymentCommision" type="java.lang.Float" update="false">
+            <column name="PAYMENT_COMMISION">
+            	<comment>协议服务费</comment>
+            </column>
+        </property>
+        <property name="fieldType" type="java.lang.String" update="false">
+            <column name="FIELD_TYPE" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="test.yhlm2m.Student" table="student">
+		<id name="sid" type="java.lang.Integer">
+			<column name="sid" />
+			<generator class="increment" />
+		</id>
+		<property name="sname" type="java.lang.String">
+			<column name="sname" length="30" not-null="true" />
+		</property>
+		<set name="studentTeacherLinks" inverse="true" lazy="true">
+			<key>
+				<column name="sid" unique="true" />
+			</key>
+			<one-to-many class="test.yhlm2m.StudentTeacherLink" />
+		</set>
+	</class>
+</hibernate-mapping>

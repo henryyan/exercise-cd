@@ -1,0 +1,259 @@
+
+/* 显示当前日期 */
+#dateShow {
+    padding-left: 3px;
+    display: inline;
+}
+
+/* 月份按钮 */
+#calendarBtns {
+    display: inline;
+    padding-left: 20px;
+}
+
+/* 日历 */
+#bookingCalendar {
+    padding-top: 10px;
+}
+
+/* 场地活动加载提示 */
+#tipInfo {
+    padding-left: 20px;
+    display: inline;
+    font-size: .9em;
+    color: #000000;
+}
+
+/* 今天 */
+.currentDate {
+    font-weight: bold;
+    font-size: 15pt;
+}
+
+/* 可以预定 */
+.usable {
+    background-color: #066839;
+    cursor: pointer;
+}
+
+/* 不可预定 */
+.unusable {
+    background-color: #B32B24;
+    cursor: pointer;
+}
+
+/* 超时，可以补登计 */
+.timeout {
+    background-color: DCDCDC;
+}
+
+.usable, .unusable, .timeout {
+    margin-right: 5px;
+    padding: 3px;
+}
+
+/* 保留 */
+.reservation {
+    background-color: #FFC466;
+}
+
+span.usable, span.unusable, span.timeout {
+    padding-left: 20px;
+}
+
+/* 状态标识 */
+.notice {
+    padding-top: 20px;
+    font-size: 9pt;
+}
+
+.notice ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.notice li {
+    list-style-type: none;
+    line-height: 20px;
+    margin: 0px;
+    padding: 0px;
+    color: #FFFFFF;
+}
+
+#calendarTable {
+    text-align: center;
+    background-color: #F2F5A9;
+    font-size: 1em;
+}
+
+#calendarTable th, td {
+    border-right: 3px solid white;
+    border-bottom: 3px solid white;
+}
+
+#calendarTable .last {
+    border-right: 0px solid white;
+}
+
+#calendarTable .bottom-last {
+    border-bottom: 0px solid white;
+}
+
+#calendarTable td {
+    color: #000000;
+}
+
+#orderInfo {
+    font-size: 11pt;
+    color: black;
+}
+
+/* ===============选择场地CSS================ */
+table {
+    border-collapse: separate;
+    border-spacing: 1;
+}
+
+#gridTable {
+    height: 93%;
+    text-align: center;
+    background-color: #F2F5A9;
+}
+
+#gridTable td {
+    font-family: "黑体";
+    font-size: 12px;
+    text-align: center;
+    font-weight: normal;
+    color: #000000;
+    border-right: 1px solid white;
+    border-bottom: 4px solid white;
+    padding: 3px;
+}
+
+#gridTable th {
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+#gridTable .period {
+    background-color: #707070;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+/*--- Link Styles ---*/
+#gridTable a:link {
+    color: #000000;
+    text-decoration: none;
+}
+
+#gridTable a:visited {
+    text-decoration: none;
+    color: #000000;
+}
+
+#gridTable a:hover {
+    text-decoration: none;
+    color: #000000;
+}
+
+#gridTable a:active {
+    text-decoration: none;
+    color: #000000;
+}
+
+.status {
+    border: 1px solid blue;
+}
+
+.status span {
+    padding-left: 20px;
+}
+
+.currentGrid a {
+    background-color: yellow;
+}
+
+/* =============================================================== */
+/* 批量操作 */
+.batchOption {
+    font-size: 10pt;
+}
+
+/* 选择器 */
+#selector {
+    padding-right: 10px;
+}
+
+/* 分页 */
+.pageStep {
+    font-size: 10pt;
+    text-align: center;
+    width: 100%;
+}
+
+.pageStep a {
+    font-size: 10pt;
+    text-decoration: none;
+    display: inline;
+    padding-right: 10px;
+}
+
+/* 今天 */
+.today {
+    font-weight: bold;
+    color: yellow;
+}
+
+.basic {
+    padding-left: 5px;
+    text-decoration: line-through;
+}
+
+#boxTable td {
+    color: #000000;
+}
+
+/* 已付款 */
+.pay {
+    text-decoration: line-through;
+}
+
+/* 订单详细 */
+#orderInfo {
+    font-size: 11pt;
+    color: black;
+}
+
+/* 余额 */
+.balance {
+    line-height: 15px;
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+/* 订单信息提示 */
+#tiptip_content {
+    font-size: 14px;
+    background-color: rgb(25, 25, 25);
+    line-height: 1.5em;
+}roo
+
+#cardTable td {
+    color: black;
+    text-align: center;
+}
+
+#cardTable tr:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
+
+.book-outside {
+    width: 22px;
+    vertical-align: middle;
+    margin-right: .3em;
+}

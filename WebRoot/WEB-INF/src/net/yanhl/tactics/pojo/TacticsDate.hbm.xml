@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.tactics.pojo.TacticsDate" table="t_tactics_date">
+    	<comment>策略日期</comment>
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="tactics" class="net.yanhl.tactics.pojo.Tactics" fetch="select">
+            <column name="TACTICS_ID">
+                <comment>策略ID</comment>
+            </column>
+        </many-to-one>
+        <property name="venueId" type="java.lang.Long">
+            <column name="VENUE_ID">
+                <comment>场馆ID</comment>
+            </column>
+        </property>
+        <property name="fromDate" type="java.sql.Date">
+            <column name="FROM_DATE" length="0">
+                <comment>开始日期</comment>
+            </column>
+        </property>
+        <property name="toDate" type="java.sql.Date">
+            <column name="TO_DATE" length="0">
+                <comment>结束日期</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

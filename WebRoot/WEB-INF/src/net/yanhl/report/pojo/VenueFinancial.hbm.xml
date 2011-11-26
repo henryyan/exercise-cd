@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="net.yanhl.report.pojo.VenueFinancial" table="t_venue_financial_statement">
+		<comment>场馆资金</comment>
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="identity" />
+		</id>
+		<property name="venueId" type="java.lang.Long">
+			<column name="venue_id" />
+		</property>
+		<property name="TDate" type="java.util.Date">
+			<column name="t_date" length="0" />
+		</property>
+		<property name="amountType" type="java.lang.String">
+			<column name="amount_type" length="250">
+				<comment>现金：非现金：合计--现金：即时发生，现金：未来收入，现金：会员卡，现金：小计；非现金：以前预定，非现金：会员卡消费，非现金：小计；</comment>
+			</column>
+		</property>
+		<property name="currentFields" type="java.lang.Integer">
+			<column name="current_fields" />
+		</property>
+		<property name="currentFees" type="java.lang.Long">
+			<column name="current_fees" precision="10" scale="0" />
+		</property>
+		<property name="nextFields" type="java.lang.Integer">
+			<column name="next_fields" />
+		</property>
+		<property name="nextFees" type="java.lang.Long">
+			<column name="next_fees" precision="10" scale="0" />
+		</property>
+		<property name="cash" type="java.lang.Long">
+			<column name="cash" precision="10" scale="0" />
+		</property>
+		<property name="createdAt" type="java.util.Date">
+			<column name="created_at" length="0" />
+		</property>
+	</class>
+</hibernate-mapping>

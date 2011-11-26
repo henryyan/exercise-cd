@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.member.pojo.CardUsageRecord" table="t_card_usage_record">
+    	<comment>会员卡使用记录</comment>
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="cardId" type="java.lang.Long">
+            <column name="card_id" />
+        </property>
+        <property name="cardNo" type="java.lang.String">
+            <column name="card_no" />
+        </property>
+        <property name="venueId" type="java.lang.Long">
+            <column name="VENUE_ID">
+                <comment>场馆ID</comment>
+            </column>
+        </property>
+        <property name="usageDate" type="java.util.Date">
+            <column name="usage_date" length="0" />
+        </property>
+        <property name="usageTimeSlice" type="java.lang.String">
+            <column name="usage_time_slice" length="50" />
+        </property>
+        <property name="signature" type="java.lang.String">
+            <column name="signature" length="50" />
+        </property>
+        <property name="optionTotal" type="java.lang.Double">
+            <column name="option_total" precision="10" />
+        </property>
+        <property name="usageType" type="java.lang.String">
+            <column name="usage_type" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="net.yanhl.venue.pojo.VenueInfo" table="t_venue_info">
+		<comment>场馆信息</comment>
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+		<property name="venueName" type="java.lang.String">
+			<column name="VENUE_NAME" length="50">
+				<comment>场馆名称</comment>
+			</column>
+		</property>
+		<property name="phone" type="java.lang.String">
+			<column name="PHONE" length="13">
+				<comment>联系电话</comment>
+			</column>
+		</property>
+		<property name="fax" type="java.lang.String">
+			<column name="FAX" length="13">
+				<comment>传真</comment>
+			</column>
+		</property>
+		<property name="adress" type="java.lang.String">
+			<column name="ADRESS" length="100">
+				<comment>地址</comment>
+			</column>
+		</property>
+		<property name="city" type="java.lang.String">
+			<column name="CITY" length="20">
+				<comment>所在城市</comment>
+			</column>
+		</property>
+		<property name="district" type="java.lang.String">
+			<column name="DISTRICT" length="20">
+				<comment>所在区(县)</comment>
+			</column>
+		</property>
+		<property name="area" type="java.lang.String">
+			<column name="AREA" length="20">
+				<comment>商圈</comment>
+			</column>
+		</property>
+		<property name="zipcode" type="java.lang.String">
+			<column name="ZIPCODE" length="6">
+				<comment>邮编</comment>
+			</column>
+		</property>
+		<property name="openTime" type="java.lang.String">
+			<column name="OPEN_TIME" length="5">
+				<comment>营业开始时间</comment>
+			</column>
+		</property>
+		<property name="closeTime" type="java.lang.String">
+			<column name="CLOSE_TIME" length="5">
+				<comment>营业结束时间</comment>
+			</column>
+		</property>
+		<property name="contact" type="java.lang.String">
+			<column name="CONTACT" length="10">
+				<comment>联系人</comment>
+			</column>
+		</property>
+		<property name="cell" type="java.lang.String">
+			<column name="CELL" length="11">
+				<comment>手机号码</comment>
+			</column>
+		</property>
+		<property name="email" type="java.lang.String">
+			<column name="EMAIL" length="30">
+				<comment>电子邮件</comment>
+			</column>
+		</property>
+		<property name="intraduction" type="java.lang.String">
+			<column name="INTRADUCTION" length="16777215">
+				<comment>场馆简介</comment>
+			</column>
+		</property>
+		<property name="photoUrl" type="java.lang.String">
+			<column name="PHOTO_URL" length="300">
+				<comment>场馆图片位置</comment>
+			</column>
+		</property>
+		<property name="authenticode" type="java.lang.String">
+            <column name="AUTHENTICODE" length="10" />
+        </property>
+        <property name="verification" type="java.lang.Boolean">
+            <column name="VERIFICATION" />
+        </property>
+        <property name="sendSms" type="java.lang.Boolean" update="false" insert="false">
+            <column name="send_sms">
+                <comment>是否发短信</comment>
+            </column>
+        </property>
+        <property name="isProtocol" type="java.lang.Boolean" update="false">
+            <column name="IS_PROTOCOL">
+                <comment>是否为协议客户</comment>
+            </column>
+        </property>
+
+		<one-to-one name="businessInfo" class="net.yanhl.venue.pojo.BusinessInfo"
+			property-ref="venueInfo" cascade="all" />
+		
+		<set name="venueInfoFieldTypeLinks" inverse="true" lazy="false">
+			<key>
+				<column name="venue_id" unique="true" />
+			</key>
+			<one-to-many class="net.yanhl.field.pojo.type.VenueInfoFieldTypeLink" />
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.price.pojo.football.FootballWeekendPrice" table="t_field_football_weekend_price">
+    	<comment>足球周末价格</comment>
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="venueId" type="java.lang.Long">
+            <column name="VENUE_ID" />
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="PRICE" />
+        </property>
+        <property name="paymentCommision" type="java.lang.Float">
+            <column name="PAYMENT_COMMISION">
+            	<comment>协议服务费</comment>
+            </column>
+        </property>
+        <property name="fromTime" type="java.lang.String">
+            <column name="FROM_TIME" length="5" />
+        </property>
+        <property name="toTime" type="java.lang.String">
+            <column name="TO_TIME" length="5" />
+        </property>
+    </class>
+</hibernate-mapping>

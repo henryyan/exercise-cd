@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="net.yanhl.field.pojo.type.VenueInfoFieldTypeLink" table="t_link_venue_fieldtype">
+		<comment>场馆和场地类型关联关系表</comment>
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+		<many-to-one name="fieldType" class="net.yanhl.field.pojo.type.FieldType" lazy="false"
+			cascade="save-update">
+			<column name="field_type_id"/>
+		</many-to-one>
+		<many-to-one name="venueInfo" class="net.yanhl.venue.pojo.VenueInfo" lazy="false"
+			cascade="save-update">
+			<column name="venue_id"/>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

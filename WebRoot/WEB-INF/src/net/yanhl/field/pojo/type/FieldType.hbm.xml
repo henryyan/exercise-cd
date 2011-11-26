@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="net.yanhl.field.pojo.type.FieldType" table="t_field_type">
+		<comment>场地类型</comment>
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+		<property name="typeId" type="java.lang.String">
+            <column name="TYPE_ID" length="20" unique="true">
+            	<comment>场地类型标示</comment>
+            </column>
+        </property>
+        <property name="typeName" type="java.lang.String">
+            <column name="TYPE_NAME" length="20">
+            	<comment>场地类型名称</comment>
+            </column>
+        </property>
+        <property name="tableName" type="java.lang.String">
+            <column name="TABLE_NAME" length="50">
+            	<comment>数据库表名称，以此规则开头</comment>
+            </column>
+        </property>
+        <property name="enable" type="java.lang.Boolean">
+            <column name="ENABLE">
+                <comment>是否启用</comment>
+            </column>
+        </property>
+		<set name="venueInfoFieldTypeLinks" inverse="true" lazy="true">
+			<key>
+				<column name="field_type_id" unique="true" />
+			</key>
+			<one-to-many class="net.yanhl.field.pojo.type.VenueInfoFieldTypeLink" />
+		</set>
+	</class>
+</hibernate-mapping>

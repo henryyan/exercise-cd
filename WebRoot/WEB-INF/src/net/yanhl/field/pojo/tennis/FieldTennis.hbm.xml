@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.field.pojo.tennis.FieldTennis" table="t_field_tennis">
+    	<comment>网球场地</comment>
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <many-to-one name="venueInfo" class="net.yanhl.venue.pojo.VenueInfo" lazy="false" fetch="select">
+            <column name="VENUE_ID">
+                <comment>场馆ID</comment>
+            </column>
+        </many-to-one>
+        <property name="createDate" type="java.sql.Date">
+            <column name="CREATE_DATE">
+                <comment>创建日期</comment>
+            </column>
+        </property>
+        <property name="fieldCode" type="java.lang.String">
+            <column name="FIELD_CODE">
+                <comment>管理员自定义的编号</comment>
+            </column>
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" length="50" />
+        </property>
+        <property name="envType" type="java.lang.String">
+            <column name="ENV_TYPE" length="20">
+                <comment>室内、室外、半露天、其他 环境类型不作为价格的参考，或者不不需要环境类型</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" length="2">
+                <comment>启用、维护、关闭</comment>
+            </column>
+        </property>
+        <property name="advance" type="java.lang.Integer">
+            <column name="ADVANCE">
+                <comment>提前预定天数</comment>
+            </column>
+        </property>
+        <property name="issueAdvance" type="java.lang.Integer">
+            <column name="ISSUE_ADVANCE">
+                <comment>可提前发布天数</comment>
+            </column>
+        </property>
+        <property name="issueLastDate" type="java.sql.Date">
+            <column name="ISSUE_LAST_DATE">
+                <comment>最后发布日期</comment>
+            </column>
+        </property>
+        <set name="fieldActivities" inverse="true" cascade="delete-orphan">
+            <key>
+                <column name="FIELD_ID" />
+            </key>
+            <one-to-many class="net.yanhl.field.pojo.tennis.FieldTennisActivity" />
+        </set>
+    </class>
+</hibernate-mapping>

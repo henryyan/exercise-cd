@@ -1,0 +1,1 @@
+from FieldBadmintoonActivity where fieldOrder is not null

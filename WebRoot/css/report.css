@@ -1,0 +1,12 @@
+body {text-align: center;}
+
+
+.status {width: 50px;}
+.exercise {background-color: #99CC00;}
+.preserving {background-color: #FFFF00;}
+.unstart {background-color: #90EE90;}
+
+.venueName {padding-right: 30px;}
+
+#operationsTable {display: none;}
+#operationsTable td {color:#000;}

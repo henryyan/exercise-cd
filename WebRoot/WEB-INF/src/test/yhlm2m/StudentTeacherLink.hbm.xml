@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="test.yhlm2m.StudentTeacherLink" table="student_teacher_link">
+		<id name="id" type="java.lang.Integer">
+			<column name="id" />
+			<generator class="increment" />
+		</id>
+		<many-to-one name="teacher" class="test.yhlm2m.Teacher"
+			cascade="save-update">
+			<column name="tid" unique="true" />
+		</many-to-one>
+		<many-to-one name="student" class="test.yhlm2m.Student"
+			cascade="save-update">
+			<column name="sid" unique="true" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

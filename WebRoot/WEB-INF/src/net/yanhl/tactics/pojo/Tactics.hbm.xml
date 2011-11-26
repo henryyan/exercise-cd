@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.tactics.pojo.Tactics" table="t_tactics">
+    	<comment>特殊策略</comment>
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="venueId" type="java.lang.Long">
+            <column name="VENUE_ID">
+                <comment>场馆ID</comment>
+            </column>
+        </property>
+        <property name="fieldType" type="java.lang.String" update="false">
+            <column name="FIELD_TYPE" length="20">
+                <comment>场地类型</comment>
+            </column>
+        </property>
+        <property name="tacticsName" type="java.lang.String">
+            <column name="TACTICS_NAME" length="50">
+                <comment>策略名称</comment>
+            </column>
+        </property>
+        <property name="isModify" type="java.lang.Boolean">
+            <column name="IS_MODIFY">
+                <comment>否是修改过日期、价格</comment>
+            </column>
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" length="2000">
+                <comment>备注</comment>
+            </column>
+        </property>
+        <set name="tacticsDates" inverse="true" lazy="false" cascade="delete-orphan">
+            <key>
+                <column name="TACTICS_ID">
+                    <comment>策略ID</comment>
+                </column>
+            </key>
+            <one-to-many class="net.yanhl.tactics.pojo.TacticsDate" />
+        </set>
+        <set name="tacticsPrices" inverse="true" lazy="false" cascade="delete-orphan">
+            <key>
+                <column name="TACTICS_ID">
+                    <comment>策略ID</comment>
+                </column>
+            </key>
+            <one-to-many class="net.yanhl.tactics.pojo.TacticsPrice" />
+        </set>
+    </class>
+</hibernate-mapping>

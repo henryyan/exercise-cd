@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+
+	<form-beans>
+		<form-bean name="BaseForm" type="org.apache.struts.action.DynaActionForm"></form-bean>
+		<form-bean name="multiUploadForm" type="net.yanhl.upload.form.MultiUploadForm" />
+	</form-beans>
+	
+	<global-forwards>
+		<forward name="error" path="/error.jsp"/>
+		<forward name="login" path="/index.jsp" redirect="true"/>
+		<forward name="index" path="/main2.jsp" redirect="true"/>
+		<forward name="newUser" path="/venue/venueInfo.html" redirect="true"></forward>
+		<forward name="wizard_verify" path="/wizard/verify.html" redirect="true"/>
+		<forward name="wizard_venue" path="/wizard/venue.html" redirect="true"/>
+		<forward name="wizard_field" path="/wizard/field.jsp" redirect="true"/>
+	</global-forwards>
+
+	<action-mappings>
+		<!-- ============================ 公共架构 ============================-->
+		<action path="/loadObj" scope="request" />
+		<action path="/deleteObj" scope="request" />
+
+		<!-- ============================ 场馆管理员 ============================-->
+		<action path="/register" scope="request" parameter="registe" />
+		<action path="/login" scope="request" parameter="login" />
+		<action path="/logout" scope="request" parameter="logout" />
+		<action path="/checkVenueUserNameExist" scope="request" parameter="checkVenueUserNameExist" />
+		<action path="/venue/checkVenueNameExist" scope="request" parameter="checkVenueNameExist" />
+		<action path="/venue/changePwd" scope="request" parameter="changePwd" />
+		<action path="/venue/saveVenueInfo" scope="request" parameter="saveOrUpdateVenue" />
+		<action path="/venue/loadVenue" scope="request" parameter="loadVenue" />
+		<action path="/venue/saveBusinessInfo" scope="request" parameter="saveBusinessInfo" />
+		<action path="/venue/loadBusinessInfo" scope="request" parameter="loadBusinessInfo" />
+		<action path="/getBackPwd" scope="request" parameter="getBackPassword" />
+		<action path="/venue/picture/venuePictureList" parameter="venuePictureList">
+			<forward name="pictureList" path="/venue/picture/venue-picture.jsp"></forward>
+		</action>
+		<action path="/venue/picture/deletePicture" parameter="deletePicture"/>
+		<action path="/venue/picture/setMajorPicture" parameter="setMajorPicture"/>
+		<action path="/venue/picture/updatePictureInfo" parameter="updatePictureInfo"/>
+		<action path="/uploadVenuePicture" scope="request" attribute="multiUploadForm" name="multiUploadForm"/>
+
+		<!-- ============================ 信息颁布 ============================-->
+		<action path="/information/saveInfo" scope="request" parameter="saveInfo" />
+		<action path="/information/infoList" scope="request" parameter="infoList">
+			<forward name="success" path="/information/infoList.jsp"></forward>
+		</action>
+
+
+		<!-- ============================ 场地管理 ============================-->
+		<action path="/field/fieldList" scope="request" parameter="fieldList">
+			<forward name="fieldList" path="/field/fieldList.jsp"/>
+		</action>
+		<action path="/field/saveField" scope="request" parameter="addField" />
+		<action path="/field/loadField" scope="request" parameter="loadField" />
+		<action path="/field/updateField" scope="request" parameter="updateField" />
+		<action path="/field/fieldNames" scope="request" parameter="fieldNames" />
+		<action path="/field/changeAdvance" scope="request" parameter="changeAdvance" />
+		<action path="/field/countField" scope="request" parameter="countField" />
+		
+		<!-- ============================ 场地类型管理 ============================-->
+		<action path="/field/type/list" scope="request" parameter="list">
+			<forward name="list" path="/field/type/fieldTypeList.jsp"/>
+		</action>
+		<action path="/field/type/enableTypeList" scope="request" parameter="enableFieldtypeList">
+			<forward name="list" path="/field/type/enableFieldTypeList.jsp"/>
+		</action>
+		<action path="/field/type/addType" scope="request" parameter="addType" />
+		<action path="/field/type/linkFieldType" scope="request" parameter="linkFieldType" />
+		<action path="/field/type/getFieldTypes" scope="request" parameter="getFieldTypes" />
+
+		<!-- ============================ 场地活动 ============================-->
+		<action path="/activity/fieldActivityStatus" scope="request" parameter="fieldActivityStatus" />
+		<action path="/activity/getActivityStatus" scope="request" parameter="getActivityStatus" />
+		<action path="/activity/issueActivity" scope="request" parameter="issueActivity" />
+		<action path="/activity/getActivityGrid" scope="request" parameter="getActivityGrid" />
+		<action path="/activity/getMaxIssueDays" scope="request" parameter="getMaxIssueDays" />
+		<action path="/activity/enableFieldList" scope="request" parameter="enableFieldList">
+			<forward name="enableFieldList" path="/activity/issueFieldActivity.jsp"></forward>
+			<forward name="wizardEnableFieldList" path="/activity/wizardIssueFieldActivity.jsp"></forward>
+		</action>
+
+		<!-- ============================ 场地价格 ============================-->
+		<action path="/price/updatePrice" scope="request" parameter="updatePrice" />
+		<action path="/price/hasPrice" scope="request" parameter="hasPrice" />
+		<action path="/price/savePrice" scope="request" parameter="savePrice" />
+		<action path="/price/fieldPriceList" scope="request" parameter="fieldPriceList">
+			<forward name="basic" path="/price/basicPrice.jsp"/>
+			<forward name="weekend" path="/price/weekendPrice.jsp"/>
+			<forward name="special" path="/price/specialPrice.jsp"/>
+
+			<forward name="wbasic" path="/price/wizardBasicPrice.jsp"/>
+			<forward name="wweekend" path="/price/wizardWeekendPrice.jsp"/>
+			<forward name="wspecial" path="/price/wizardSpecialPrice.jsp"/>
+		</action>
+		<action path="/price/loadPrice" scope="request" parameter="loadPrice" />
+		<action path="/price/countPrice" scope="request" parameter="countPrice" />
+
+		<!-- ============================ 场地订单 ============================-->
+		<action path="/activity/fieldActivity" scope="request" parameter="fieldActivity">
+			<forward name="book" path="/activity/bookActivity.jsp"/>
+			<forward name="local" path="/activity/localActivity.jsp"/>
+		</action>
+		<action path="/activity/addOrder" scope="request" parameter="addOrder" />
+		<action path="/activity/loadOrder" scope="request" parameter="loadOrder" />
+		<action path="/activity/updateOrder" scope="request" parameter="updateOrder" />
+		<action path="/activity/orderHandle" scope="request" parameter="orderHandle" />
+		<action path="/activity/validateCode" scope="request" parameter="validateCode" />
+		<action path="/activity/getValidateCode" scope="request" parameter="getValidateCode" />
+		<action path="/activity/payForOrder" scope="request" parameter="payForOrder" />
+
+		<!-- ============================ 会员卡管理 ============================-->
+		<action path="/member/getMemberCardTypes" scope="request" parameter="getMemberCardTypes" />
+		<action path="/member/checkCardNumber" scope="request" parameter="checkCardNumber" />
+		<action path="/member/saveMemberCard" scope="request" parameter="saveMemberCard" />
+		<action path="/member/memberCardList" scope="request" parameter="memberCardList" />
+		<action path="/member/loadMemberCard" scope="request" parameter="loadMemberCard" />
+		<action path="/member/recharge" scope="request" parameter="recharge" />
+
+		<action path="/member/cardTypeList" scope="request" parameter="cardTypeList">
+			<forward name="cardTypeList" path="/member/cardTypeList.jsp"></forward>
+		</action>
+		<action path="/member/addCardType" scope="request" parameter="addCardType" />
+		<action path="/member/loadCardType" scope="request" parameter="loadCardType" />
+		<action path="/member/cardUsageRecordList" scope="request" parameter="cardUsageRecordList">
+			<forward name="cardUsageRecordList" path="/member/cardUsageRecordList.jsp"></forward>
+		</action>
+		<action path="/member/loadCardUsageDetail" scope="request" parameter="loadCardUsageDetail" />
+
+		<!-- ============================ 报表系统 ============================-->
+		<action path="/report/reportDaily" scope="request" parameter="reportDaily" />
+		<action path="/report/reportCash" scope="request" parameter="reportCash" />
+		<action path="/report/orderItemList" scope="request" parameter="orderItemList" />
+		<action path="/report/findFieldActivity" scope="request" parameter="findFieldActivity" />
+		<action path="/report/accountOrderList" scope="request" parameter="accountOrderList" />
+		<action path="/report/protocolFee" scope="request" parameter="protocolFee" />
+		<action path="/report/sumProtocolFee" scope="request" parameter="sumProtocolFee" />
+		<action path="/report/sumActivityPrice" scope="request" parameter="sumActivityPrice" />
+
+		<!-- ============================ 价格策略管理 ============================-->
+		<action path="/tactics/saveTactics" scope="request" parameter="saveTactics" />
+		<action path="/tactics/addTacticsDate" scope="request" parameter="addTacticsDate" />
+		<action path="/tactics/tacticsDateList" scope="request" parameter="tacticsDateList" />
+		<action path="/tactics/tacticsList" scope="request" parameter="tacticsList">
+			<forward name="tacticsList" path="/tactics/tacticsList.jsp"></forward>
+		</action>
+		<action path="/tactics/updatePrice" scope="request" parameter="updatePrice" />
+		<action path="/tactics/tacticsPriceList" scope="request" parameter="tacticsPriceList">
+			<forward name="success" path="/tactics/tacticsPriceList.jsp"></forward>
+		</action>
+		<action path="/tactics/saveTacticsPrice" scope="request" parameter="saveTacticsPrice" />
+		<action path="/tactics/deleteAndBakActivity" scope="request" parameter="deleteAndBakActivity" />
+		<action path="/tactics/tacticsActivityList" scope="request" parameter="tacticsActivityList">
+			<forward name="success" path="/tactics/tacticsActivityList.jsp"></forward>
+		</action>
+		<action path="/tactics/countActivityOfTactics" scope="request" parameter="countActivityOfTactics" />
+		<action path="/tactics/applyDefaultTactics" scope="request" parameter="applyDefaultTactics" />
+		<action path="/tactics/checkRepeatDates" scope="request" parameter="checkRepeatDates" />
+
+		<!-- ============================ 首页台帐 ============================-->
+		<action path="/statistics/getData" scope="request" parameter="getStatisticsDatas" />
+	</action-mappings>
+
+	<controller
+		processorClass="org.springframework.web.struts.DelegatingRequestProcessor"
+		inputForward="true" />
+	<!-- ===================================== Message Resources Definitions  -->
+	<message-resources parameter="resource" />
+
+	<!-- ======================================= Plug Ins Configuration -->
+	<plug-in className="org.apache.commons.beanutils.converters.ConvertPlugIn" />
+</struts-config>

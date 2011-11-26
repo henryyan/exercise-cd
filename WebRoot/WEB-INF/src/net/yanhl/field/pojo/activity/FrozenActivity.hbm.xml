@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="net.yanhl.field.pojo.activity.FrozenActivity" table="frozen_activities">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+		<property name="activityId" type="java.lang.Long">
+			<column name="activity_id"/>
+		</property>
+		<property name="createAt" type="java.util.Date">
+			<column name="created_at" />
+		</property>
+		<property name="updateAt" type="java.util.Date">
+			<column name="updated_at" />
+		</property>
+		<property name="sessionId" type="java.lang.String">
+			<column name="session_id" length="20" />
+		</property>
+		<property name="userId" type="java.lang.Long">
+			<column name="user_id" />
+		</property>
+		<property name="state" type="java.lang.Integer">
+			<column name="state">
+				<comment>0表示预定中   1表示支付中  2表示支付成功</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

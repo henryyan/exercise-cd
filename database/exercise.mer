@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ERDiagram version="1.1">
+  <Connection session="mysql-localhost" database="exercise" />
+  <Drawing gridVisible="false" snapOn="false" fastRouting="false" labelsVisible="true" />
+  <Tables>
+    <Table name="t_business_info">
+      <Drawing expanded="true" location="342,510" dimensions="231,170" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="true" required="true" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="NAME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="BANK" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="BANK_ACCOUNT" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="OWNER" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="OWNER_MOBILE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="11" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_card_discount">
+      <Drawing expanded="true" location="521,1570" dimensions="211,110" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="card_no" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="discount_rate" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="discount_time" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_card_type">
+      <Drawing expanded="true" location="836,1295" dimensions="235,210" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="venue_id" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="type_name" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="money_amount" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="period_month" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="discount_rate" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="discount_time" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="DISCOUNT_TYPE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="2" />
+        </Column>
+        <Column name="DISCOUNT_PRICE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="FLOAT" size="10,2" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_card_usage_record">
+      <Drawing expanded="true" location="0,1295" dimensions="227,230" />
+      <Columns>
+        <Column name="id" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="venue_id" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="card_id" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="card_no" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="usage_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATETIME" />
+        </Column>
+        <Column name="usage_time_slice" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="signature" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="option_total" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="FLOAT" size="10,2" />
+        </Column>
+        <Column name="balance" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="FLOAT" size="10,2" />
+        </Column>
+        <Column name="usage_type" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_field_badmintoon_activity_tactics">
+      <Drawing expanded="true" location="0,0" dimensions="264,350" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="FIELD_ID" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="TACTICS_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="FIELD_TYPE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="FIELD_NAME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="PERIOD" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="PRICE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="ORDER_ID" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="ACTIVITY" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="FROM_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TIME" />
+        </Column>
+        <Column name="TO_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TIME" />
+        </Column>
+        <Column name="ORDER_USER" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="USABLE_DATE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="AUTHENTICODE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="VERIFICATION" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="1" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_field_badmintoon_activity">
+      <Drawing expanded="true" location="984,0" dimensions="227,350" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="FIELD_ID" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="TACTICS_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="FIELD_TYPE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="FIELD_NAME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="PERIOD" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="PRICE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="ORDER_ID" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="ACTIVITY" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="FROM_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TIME" />
+        </Column>
+        <Column name="TO_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TIME" />
+        </Column>
+        <Column name="ORDER_USER" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="USABLE_DATE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="AUTHENTICODE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="VERIFICATION" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="1" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_field_badmintoon_basic_price">
+      <Drawing expanded="true" location="0,1570" dimensions="243,170" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="LOWEST_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="LOWEST_TIME_TYPE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="4" />
+        </Column>
+        <Column name="PRICE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="FROM_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="5" />
+        </Column>
+        <Column name="TO_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="5" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_field_badmintoon_special_price">
+      <Drawing expanded="true" location="535,1295" dimensions="256,210" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="LOWEST_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="LOWEST_TIME_TYPE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="4" />
+        </Column>
+        <Column name="PRICE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="FROM_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="5" />
+        </Column>
+        <Column name="TO_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="5" />
+        </Column>
+        <Column name="FROM_DATE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="END_DATE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_field_badmintoon_weekend_price">
+      <Drawing expanded="true" location="1395,1295" dimensions="267,170" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="LOWEST_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="LOWEST_TIME_TYPE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="4" />
+        </Column>
+        <Column name="PRICE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="FROM_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="5" />
+        </Column>
+        <Column name="TO_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="5" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_field_badmintoon">
+      <Drawing expanded="true" location="7,480" dimensions="235,230" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="CREATE_DATE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="FIELD_CODE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="NAME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="ENV_TYPE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="STATUS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="ADVANCE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="ISSUE_ADVANCE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="ISSUE_LAST_DATE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_field_order">
+      <Drawing expanded="true" location="973,450" dimensions="242,290" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="FIELD_ID" primary_key="false" foreign_key="false" required="true" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="CONTACT" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="CARD_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="USER_CODE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="PHONE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="13" />
+        </Column>
+        <Column name="PAYMENT_STATUS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIT" />
+        </Column>
+        <Column name="BOOK_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TIMESTAMP" />
+        </Column>
+        <Column name="PAYMENT_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TIMESTAMP" />
+        </Column>
+        <Column name="PAYMENT_SUM" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DOUBLE" size="10,2" />
+        </Column>
+        <Column name="STANDARD_PRICE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DOUBLE" size="10,2" />
+        </Column>
+        <Column name="PAYMENT_STYLE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_member_card">
+      <Drawing expanded="true" location="1542,0" dimensions="242,270" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="CARD_NUMBER" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="NAME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="15" />
+        </Column>
+        <Column name="BALANCE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="FLOAT" size="10,2" />
+        </Column>
+        <Column name="MOBILE_PHONE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="11" />
+        </Column>
+        <Column name="CREATE_DATE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATETIME" />
+        </Column>
+        <Column name="ID_NO" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="ADDRESS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="200" />
+        </Column>
+        <Column name="CARD_TYPE_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="PERIOD_VALIDITY" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="EFFECT_DATE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_sys_user">
+      <Drawing expanded="true" location="1116,1295" dimensions="234,210" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="PASSWORD" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="16" />
+        </Column>
+        <Column name="NAME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="PHONE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="13" />
+        </Column>
+        <Column name="MOBILE_PHONE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="11" />
+        </Column>
+        <Column name="EMAIL" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="30" />
+        </Column>
+        <Column name="CITY" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="30" />
+        </Column>
+        <Column name="DISTRICT" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="30" />
+        </Column>
+        <Column name="ADDRESS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="100" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_tactics_date">
+      <Drawing expanded="true" location="1284,0" dimensions="189,130" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="TACTICS_ID" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="FROM_DATE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="TO_DATE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_tactics_price">
+      <Drawing expanded="true" location="288,1570" dimensions="188,150" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="TACTICS_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="PRICE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="FROM_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="5" />
+        </Column>
+        <Column name="TO_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="5" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_tactics">
+      <Drawing expanded="true" location="1260,230" dimensions="237,150" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="FIELD_TYPE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="TACTICS_NAME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="IS_MODIFY" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIT" />
+        </Column>
+        <Column name="REMARK" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="2000" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_venue_financial_statement">
+      <Drawing expanded="true" location="272,1295" dimensions="218,230" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="venue_id" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="t_date" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DATE" />
+        </Column>
+        <Column name="amount_type" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="250" />
+        </Column>
+        <Column name="current_fields" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="current_fees" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DECIMAL" size="10" />
+        </Column>
+        <Column name="next_fields" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="next_fees" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DECIMAL" size="10" />
+        </Column>
+        <Column name="cash" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="DECIMAL" size="10" />
+        </Column>
+        <Column name="created_at" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="TIMESTAMP" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_venue_info">
+      <Drawing expanded="true" location="310,840" dimensions="294,410" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="VENUE_NAME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="50" />
+        </Column>
+        <Column name="PHONE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="13" />
+        </Column>
+        <Column name="FAX" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="13" />
+        </Column>
+        <Column name="ADRESS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="100" />
+        </Column>
+        <Column name="CITY" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="DISTRICT" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="AREA" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="20" />
+        </Column>
+        <Column name="ZIPCODE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="6" />
+        </Column>
+        <Column name="OPEN_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="5" />
+        </Column>
+        <Column name="CLOSE_TIME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="5" />
+        </Column>
+        <Column name="CONTACT" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="CELL" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="11" />
+        </Column>
+        <Column name="EMAIL" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="30" />
+        </Column>
+        <Column name="INTRADUCTION" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="MEDIUMTEXT" size="16777215" />
+        </Column>
+        <Column name="PHOTO_URL" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="300" />
+        </Column>
+        <Column name="AUTHENTICODE" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="10" />
+        </Column>
+        <Column name="VERIFICATION" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="1" />
+        </Column>
+        <Column name="send_sms" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="BIT" />
+        </Column>
+      </Columns>
+    </Table>
+    <Table name="t_venue_user">
+      <Drawing expanded="true" location="673,530" dimensions="200,130" />
+      <Columns>
+        <Column name="ID" primary_key="true" foreign_key="false" required="true" unique="true">
+          <Data type="BIGINT" size="19" />
+        </Column>
+        <Column name="VENUE_ID" primary_key="false" foreign_key="true" required="false" unique="false">
+          <Data type="INT" size="10" />
+        </Column>
+        <Column name="USERNAME" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="16" />
+        </Column>
+        <Column name="PASSWORD" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="VARCHAR" size="16" />
+        </Column>
+        <Column name="STATUS" primary_key="false" foreign_key="false" required="false" unique="false">
+          <Data type="CHAR" size="2" />
+        </Column>
+      </Columns>
+    </Table>
+  </Tables>
+  <Relationships>
+    <Relationship name="FK_Reference_8">
+      <Details primary_table="t_venue_info" foreign_table="t_business_info">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="VENUE_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="t_field_badmintoon_activity_tactics_ibfk_1">
+      <Details primary_table="t_field_badmintoon" foreign_table="t_field_badmintoon_activity_tactics">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="FIELD_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="t_field_badmintoon_activity_tactics_ibfk_2">
+      <Details primary_table="t_field_order" foreign_table="t_field_badmintoon_activity_tactics">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="ORDER_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK_Reference_4">
+      <Details primary_table="t_field_badmintoon" foreign_table="t_field_badmintoon_activity">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="FIELD_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="t_field_badmintoon_activity_ibfk_1">
+      <Details primary_table="t_field_order" foreign_table="t_field_badmintoon_activity">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="ORDER_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK_Reference_7">
+      <Details primary_table="t_venue_info" foreign_table="t_field_badmintoon">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="VENUE_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK_Reference_11">
+      <Details primary_table="t_tactics" foreign_table="t_tactics_date">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="TACTICS_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+    <Relationship name="FK_Reference_5">
+      <Details primary_table="t_venue_info" foreign_table="t_venue_user">
+        <PrimaryKeys>
+          <ColumnName name="ID" />
+        </PrimaryKeys>
+        <ForeignKeys>
+          <ColumnName name="VENUE_ID" />
+        </ForeignKeys>
+      </Details>
+      <Drawing routingType="0" />
+    </Relationship>
+  </Relationships>
+</ERDiagram>
+

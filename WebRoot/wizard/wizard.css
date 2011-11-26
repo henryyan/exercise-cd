@@ -1,0 +1,32 @@
+body {overflow: hidden;}
+.wizard-nav a {
+    background: #eee;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    padding: 10px;
+    display: inline;
+}
+
+.wizard-nav a.active {
+    background: #dfd;
+}
+
+#nav-content {
+    width: 80%;
+    height: 88%;
+}
+
+#btns {
+    margin-top: 20px;
+}
+
+#tip {
+	position: absolute;
+	background-color: #F1C00A;
+	width: auto;
+	padding: 3px 3px;	/* padding greater than corner height|width */
+	margin: .25em 0.25em;
+	color:#000;
+	text-align: center;
+}
+

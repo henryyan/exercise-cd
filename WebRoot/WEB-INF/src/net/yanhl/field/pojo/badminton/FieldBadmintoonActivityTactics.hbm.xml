@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.field.pojo.badminton.FieldBadmintoonActivityTactics" table="t_field_badmintoon_activity_tactics">
+    	<comment>羽毛球待处理活动</comment>
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="venueId" type="java.lang.Long">
+            <column name="VENUE_ID" length="11" />
+        </property>
+        <property name="fieldId" type="java.lang.Long">
+            <column name="FIELD_ID" length="11" />
+        </property>
+        <many-to-one name="fieldOrder" column="ORDER_ID" cascade="all" unique="true" lazy="false"></many-to-one>
+        <property name="tacticsId" type="java.lang.Long">
+            <column name="TACTICS_ID" length="11" />
+        </property>
+        <property name="fieldType" type="java.lang.String">
+            <column name="FIELD_TYPE" length="20" />
+        </property>
+        <property name="fieldName" type="java.lang.String">
+            <column name="FIELD_NAME" length="50" />
+        </property>
+        <property name="period" type="java.lang.String">
+            <column name="PERIOD" length="50">
+                <comment>显示用，数据类型varchar就可以</comment>
+            </column>
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="PRICE" />
+        </property>
+        <property name="paymentCommision" type="java.lang.Float">
+            <column name="PAYMENT_COMMISION">
+            	<comment>协议服务费</comment>
+            </column>
+        </property>
+        <property name="authenticode" type="java.lang.String">
+            <column name="AUTHENTICODE" length="10" />
+        </property>
+        <property name="verification" type="java.lang.String">
+            <column name="VERIFICATION" length="1" />
+        </property>
+        <property name="activity" type="java.lang.String">
+            <column name="ACTIVITY" length="50">
+                <comment>正在锻炼、过期、锻炼完毕</comment>
+            </column>
+        </property>
+        <property name="fromTime" type="java.sql.Time">
+            <column name="FROM_TIME" length="0">
+                <comment>查询用，用datetime类型</comment>
+            </column>
+        </property>
+        <property name="toTime" type="java.sql.Time">
+            <column name="TO_TIME" length="0">
+                <comment>查询用，用datetime类型</comment>
+            </column>
+        </property>
+        <property name="orderUser" type="java.lang.String">
+            <column name="ORDER_USER" length="10">
+                <comment>预定会员姓名</comment>
+            </column>
+        </property>
+		<property name="usableDate" type="date">
+            <column name="USABLE_DATE">
+                <comment>可预订日期</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

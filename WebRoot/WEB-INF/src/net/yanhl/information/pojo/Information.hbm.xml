@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.information.pojo.Information" table="t_information">
+    	<comment>信息颁布</comment>
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="increment"></generator>
+        </id>
+        <property name="venueId" type="java.lang.Long" update="false">
+            <column name="VENUE_ID">
+                <comment>场馆ID</comment>
+            </column>
+        </property>
+        <property name="title" type="java.lang.String">
+            <column name="TITLE" length="200">
+                <comment>标题</comment>
+            </column>
+        </property>
+        <property name="infoContent" type="java.lang.String">
+            <column name="INFO_CONTENT" length="65535">
+                <comment>内容</comment>
+            </column>
+        </property>
+        <property name="category" type="java.lang.String">
+            <column name="CATEGORY" length="200">
+                <comment>分类</comment>
+            </column>
+        </property>
+        <property name="infoLabel" type="java.lang.String">
+            <column name="INFO_LABEL" length="200">
+                <comment>标签</comment>
+            </column>
+        </property>
+        <property name="createDate" type="java.sql.Timestamp" update="false">
+            <column name="CREATE_DATE" length="0">
+                <comment>创建日期</comment>
+            </column>
+        </property>
+        <property name="modifyDate" type="java.sql.Timestamp">
+            <column name="MODIFY_DATE" length="0">
+                <comment>最后修改日期</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

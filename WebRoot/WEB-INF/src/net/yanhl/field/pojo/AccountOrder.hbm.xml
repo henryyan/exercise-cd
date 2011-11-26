@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.field.pojo.AccountOrder" table="t_account_order">
+    	<comment>总订单</comment>
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="payTotal" type="java.lang.Double">
+            <column name="PAY_TOTAL" />
+        </property>
+        <property name="contact" type="java.lang.String">
+            <column name="CONTACT" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE" />
+        </property>
+        <property name="payTime" type="java.util.Date">
+            <column name="PAY_TIME" />
+        </property>
+        <property name="payPlatform" type="java.lang.String">
+            <column name="PAY_PLATFORM" />
+        </property>
+        <property name="platformAccount" type="java.lang.String">
+            <column name="PLATFORM_ACCOUNT" />
+        </property>
+        <property name="userId" type="java.lang.Long">
+            <column name="user_id"/>
+        </property>
+        <property name="paymentStatus" type="java.lang.Boolean">
+            <column name="payment_status"/>
+        </property>
+        <property name="venueId" type="java.lang.Long">
+            <column name="venue_id"/>
+        </property>
+        <property name="bookPlateform" type="java.lang.String" update="false">
+            <column name="BOOK_PLATEFORM">
+                <comment>由哪个平台生成的活动订单</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

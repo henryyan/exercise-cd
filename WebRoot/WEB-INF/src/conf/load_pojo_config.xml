@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pojos>
+	<!-- 价格策略主类 -->
+	<pojo name="tactics.master">
+		<convertDate>true</convertDate>
+		<ignoreCollection>true</ignoreCollection>
+		<ignoreAttributes></ignoreAttributes>
+	</pojo>
+	<!-- 信息颁布主类 -->
+	<pojo name="information.master">
+		<convertDate>true</convertDate>
+		<ignoreCollection>true</ignoreCollection>
+		<ignoreAttributes></ignoreAttributes>
+	</pojo>
+</pojos>

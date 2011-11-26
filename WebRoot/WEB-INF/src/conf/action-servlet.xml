@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+    <bean name="baseActionTemplate" singleton="false" class="net.yanhl.base.action.BaseAction" />
+
+    <bean name="/loadObj" singleton="false" class="net.yanhl.base.action.LoadAction" />
+
+    <bean name="/deleteObj" singleton="false" class="net.yanhl.base.action.DeleteAction" />
+    
+	<!--====================================================================-->
+    <!--==================================场馆管理==========================-->
+    <!--====================================================================-->
+	<bean name="venueActionTemplate" singleton="false" class="net.yanhl.venue.action.VenueAction" parent="baseActionTemplate" />
+
+	<bean name="/register" parent="venueActionTemplate"/>
+	<bean name="/login" parent="venueActionTemplate"/>
+	<bean name="/logout" parent="venueActionTemplate"/>
+	<bean name="/checkVenueUserNameExist" parent="venueActionTemplate"/>
+	<bean name="/getBackPwd" parent="venueActionTemplate"/>
+	<bean name="/venue/checkVenueNameExist" parent="venueActionTemplate"/>
+	<bean name="/venue/changePwd" parent="venueActionTemplate"/>
+	<bean name="/venue/saveVenueInfo" parent="venueActionTemplate"/>
+	<bean name="/venue/loadVenue" parent="venueActionTemplate"/>
+	<bean name="/venue/saveBusinessInfo" parent="venueActionTemplate"/>
+	<bean name="/venue/loadBusinessInfo" parent="venueActionTemplate"/>
+	
+	<bean name="venuePictureActionTemplate" singleton="false" class="net.yanhl.venue.action.VenuePictureAction" parent="baseActionTemplate" />
+	
+	<bean name="/venue/picture/venuePictureList" parent="venuePictureActionTemplate"/>
+	<bean name="/venue/picture/deletePicture" parent="venuePictureActionTemplate"/>
+	<bean name="/venue/picture/setMajorPicture" parent="venuePictureActionTemplate"/>
+	<bean name="/venue/picture/updatePictureInfo" parent="venuePictureActionTemplate"/>
+	<bean name="/uploadVenuePicture" singleton="false" class="net.yanhl.venue.action.VenuePictureUploadAction" />
+
+	<!--====================================================================-->
+   	<!--==================================信息颁布==========================-->
+   	<!--====================================================================-->
+   	<bean name="infoActionTemplate" singleton="false" class="net.yanhl.information.action.InformationAction" parent="baseActionTemplate" />
+    <bean name="/information/saveInfo" parent="infoActionTemplate"/>
+    <bean name="/information/infoList" parent="infoActionTemplate"/>
+
+	<!--====================================================================-->
+   	<!--==================================场地管理==========================-->
+   	<!--====================================================================-->
+	<bean name="fieldActionTemplate" singleton="false" class="net.yanhl.field.action.FieldAction" parent="baseActionTemplate" />
+
+	<bean name="/field/fieldList" parent="fieldActionTemplate"/>
+	<bean name="/field/saveField" parent="fieldActionTemplate"/>
+	<bean name="/field/loadField" parent="fieldActionTemplate"/>
+	<bean name="/field/updateField" parent="fieldActionTemplate"/>
+	<bean name="/field/getFieldTypes" parent="fieldActionTemplate"/>
+	<bean name="/field/fieldNames" parent="fieldActionTemplate"/>
+	<bean name="/field/changeAdvance" parent="fieldActionTemplate"/>
+	<bean name="/field/countField" parent="fieldActionTemplate"/>
+	
+	<!--====================================================================-->
+   	<!--================================场地类型管理=========================-->
+   	<!--====================================================================-->
+	<bean name="fieldTypeActionTemplate" singleton="false" class="net.yanhl.field.action.FieldTypeAction" parent="baseActionTemplate" />
+
+	<bean name="/field/type/list" parent="fieldTypeActionTemplate"/>
+	<bean name="/field/type/enableTypeList" parent="fieldTypeActionTemplate"/>
+	<bean name="/field/type/addType" parent="fieldTypeActionTemplate"/>
+	<bean name="/field/type/linkFieldType" parent="fieldTypeActionTemplate"/>
+	<bean name="/field/type/getFieldTypes" parent="fieldTypeActionTemplate"/>
+
+		<!--==================================场地活动==========================-->
+	<bean name="/activity/fieldActivityStatus" parent="fieldActionTemplate"/>
+	<bean name="/activity/issueActivity" parent="fieldActionTemplate"/>
+	<bean name="/activity/getActivityGrid" parent="fieldActionTemplate"/>
+	<bean name="/activity/getMaxIssueDays" parent="fieldActionTemplate"/>
+	<bean name="/activity/enableFieldList" parent="fieldActionTemplate"/>
+	<bean name="/activity/getActivityStatus" parent="fieldActionTemplate"/>
+
+	<!--====================================================================-->
+   <!--==================================价格管理==========================-->
+   <!--====================================================================-->
+	<bean name="priceActionTemplate" singleton="false" class="net.yanhl.price.action.PriceAction" parent="baseActionTemplate" />
+
+	<bean name="/price/hasPrice" parent="priceActionTemplate"/>
+	<bean name="/price/savePrice" parent="priceActionTemplate"/>
+	<bean name="/price/updatePrice" parent="priceActionTemplate"/>
+	<bean name="/price/fieldPriceList" parent="priceActionTemplate"/>
+	<bean name="/price/loadPrice" parent="priceActionTemplate"/>
+	<bean name="/price/countPrice" parent="priceActionTemplate"/>
+
+	<!--====================================================================-->
+   <!--==================================场地管理==========================-->
+   <!--====================================================================-->
+	<bean name="/activity/fieldActivity" parent="fieldActionTemplate"/>
+	<bean name="/activity/addOrder" parent="fieldActionTemplate"/>
+	<bean name="/activity/loadOrder" parent="fieldActionTemplate"/>
+	<bean name="/activity/updateOrder" parent="fieldActionTemplate"/>
+	<bean name="/activity/orderHandle" parent="fieldActionTemplate"/>
+	<bean name="/activity/validateCode" parent="fieldActionTemplate"/>
+	<bean name="/activity/getValidateCode" parent="fieldActionTemplate"/>
+	<bean name="/activity/payForOrder" parent="fieldActionTemplate"/>
+
+	<!--====================================================================-->
+    <!--==================================会员卡管理==========================-->
+    <!--====================================================================-->
+    <bean name="memberCardActionTemplate" singleton="false"
+    	class="net.yanhl.member.action.MemberAction" parent="baseActionTemplate">
+    </bean>
+    <bean name="/member/getMemberCardTypes" parent="memberCardActionTemplate"/>
+    <bean name="/member/checkCardNumber" parent="memberCardActionTemplate"/>
+    <bean name="/member/saveMemberCard" parent="memberCardActionTemplate"/>
+    <bean name="/member/memberCardList" parent="memberCardActionTemplate"/>
+    <bean name="/member/loadMemberCard" parent="memberCardActionTemplate"/>
+    <bean name="/member/recharge" parent="memberCardActionTemplate"/>
+
+    <bean name="/member/addCardType" parent="memberCardActionTemplate"/>
+    <bean name="/member/cardTypeList" parent="memberCardActionTemplate"/>
+    <bean name="/member/loadCardType" parent="memberCardActionTemplate"/>
+	<bean name="/member/cardUsageRecordList" parent="memberCardActionTemplate"/>
+	<bean name="/member/loadCardUsageDetail" parent="memberCardActionTemplate"/>
+
+	<!--====================================================================-->
+    <!--==================================报表系统==========================-->
+    <!--====================================================================-->
+    <bean name="reportActionTemplate" singleton="false"
+    	class="net.yanhl.report.action.ReportAction" parent="baseActionTemplate">
+    </bean>
+    <bean name="/report/reportDaily" parent="reportActionTemplate"/>
+    <bean name="/report/reportCash" parent="reportActionTemplate"/>
+    <bean name="/report/orderItemList" parent="reportActionTemplate"/>
+    <bean name="/report/findFieldActivity" parent="reportActionTemplate"/>
+    <bean name="/report/accountOrderList" parent="reportActionTemplate"/>
+    <bean name="/report/protocolFee" parent="reportActionTemplate"/>
+    <bean name="/report/sumProtocolFee" parent="reportActionTemplate"/>
+    <bean name="/report/sumActivityPrice" parent="reportActionTemplate"/>
+
+    <!--====================================================================-->
+    <!--==================================价格策略==========================-->
+    <!--====================================================================-->
+    <bean name="tacticsActionTemplate" singleton="false"
+    	class="net.yanhl.tactics.action.TacticsAction" parent="baseActionTemplate" />
+    <bean name="/tactics/saveTactics" parent="tacticsActionTemplate"/>
+    <bean name="/tactics/addTacticsDate" parent="tacticsActionTemplate"/>
+    <bean name="/tactics/tacticsList" parent="tacticsActionTemplate"/>
+    <bean name="/tactics/tacticsDateList" parent="tacticsActionTemplate"/>
+    <bean name="/tactics/saveTacticsPrice" parent="tacticsActionTemplate"/>
+    <bean name="/tactics/updatePrice" parent="tacticsActionTemplate"/>
+    <bean name="/tactics/tacticsPriceList" parent="tacticsActionTemplate"/>
+    <bean name="/tactics/deleteAndBakActivity" parent="tacticsActionTemplate"/>
+    <bean name="/tactics/tacticsActivityList" parent="tacticsActionTemplate"/>
+    <bean name="/tactics/countActivityOfTactics" parent="tacticsActionTemplate"/>
+    <bean name="/tactics/applyDefaultTactics" parent="tacticsActionTemplate"/>
+    <bean name="/tactics/checkRepeatDates" parent="tacticsActionTemplate"/>
+
+    <!--====================================================================-->
+    <!--==================================首页台帐==========================-->
+    <!--====================================================================-->
+    <bean name="statisticsActionTemplate" singleton="false"
+    	class="net.yanhl.statistics.action.StatisticsAction" parent="baseActionTemplate" />
+    <bean name="/statistics/getData" parent="statisticsActionTemplate"/>
+
+	<!--====================================================================-->
+    <!--==============================下面是其他附加设置=====================-->
+    <!--====================================================================-->
+
+    <!--  用户权限拦截器生成代理  -->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+    	<property name="beanNames">
+            <list>
+            	<value>/venue/*</value>
+            	<value>/field/*</value>
+            	<value>/price/*</value>
+            	<value>/activity/*</value>
+            	<value>/member/*</value>
+            	<value>/report/*</value>
+            	<value>/tactics/*</value>
+            	<value>/information/*</value>
+            </list>
+	    </property>
+        <property name="interceptorNames">
+            <list>
+                <value>userAuthorityInterceptor</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- 定义用户权限检查拦截器 -->
+	<bean id="userAuthorityInterceptor" class="net.yanhl.struts.authority.UserAuthorityInterceptor"/>
+</beans>

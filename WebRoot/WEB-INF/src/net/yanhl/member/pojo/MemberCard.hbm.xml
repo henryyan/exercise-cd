@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="net.yanhl.member.pojo.MemberCard" table="t_member_card">
+		<comment>会员卡</comment>
+		<id name="id" type="java.lang.Long" unsaved-value="0">
+			<column name="ID" />
+			<generator class="increment"></generator>
+		</id>
+		<property name="venueId" type="java.lang.Long">
+			<column name="VENUE_ID">
+				<comment>场馆ID</comment>
+			</column>
+		</property>
+		<property name="cardNumber" type="java.lang.String">
+			<column name="CARD_NUMBER" length="10">
+				<comment>会员卡号</comment>
+			</column>
+		</property>
+		<property name="name" type="java.lang.String">
+			<column name="NAME" length="15">
+				<comment>会员姓名</comment>
+			</column>
+		</property>
+		<property name="balance" type="java.lang.Double">
+			<column name="BALANCE" length="10">
+				<comment>卡内余额</comment>
+			</column>
+		</property>
+		<property name="mobilePhone" type="java.lang.String">
+			<column name="MOBILE_PHONE" length="11">
+				<comment>手机号码</comment>
+			</column>
+		</property>
+		<property name="createDate" type="java.util.Date">
+			<column name="CREATE_DATE" length="0">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="idNo" type="java.lang.String">
+			<column name="ID_NO" length="50">
+				<comment>身份证号码</comment>
+			</column>
+		</property>
+		<property name="address" type="java.lang.String">
+			<column name="ADDRESS" length="200">
+				<comment>联系地址</comment>
+			</column>
+		</property>
+		<many-to-one name="cardType" class="net.yanhl.member.pojo.CardType"
+			column="CARD_TYPE_ID" not-found="ignore" lazy="false"></many-to-one>
+		<property name="periodValidity" type="java.sql.Date">
+			<column name="PERIOD_VALIDITY">
+				<comment>有效期</comment>
+			</column>
+		</property>
+		<property name="effectDate" type="java.sql.Date">
+			<column name="EFFECT_DATE">
+				<comment>生效日期</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

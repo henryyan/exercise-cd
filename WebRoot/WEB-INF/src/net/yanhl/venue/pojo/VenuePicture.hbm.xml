@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="net.yanhl.venue.pojo.VenuePicture" table="t_venue_picture">
+		<comment>场馆图片</comment>
+		<id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+		<property name="venueId" type="java.lang.Long">
+			<column name="VENUE_ID">
+				<comment>场馆ID</comment>
+			</column>
+		</property>
+		<property name="pictureName" type="java.lang.String">
+			<column name="PICTURE_NAME">
+				<comment>图片名称</comment>
+			</column>
+		</property>
+		<property name="pictureRealName" type="java.lang.String">
+			<column name="PICTURE_REAL_NAME">
+				<comment>图片真实名称</comment>
+			</column>
+		</property>
+		<property name="pictureSize" type="java.lang.Long">
+			<column name="PICTURE_SIZE">
+				<comment>图片大小</comment>
+			</column>
+		</property>
+		<property name="pictureRemark" type="java.lang.String">
+			<column name="PICTURE_REMARK">
+				<comment>所在城市</comment>
+			</column>
+		</property>
+		<property name="uploadDate" type="java.util.Date">
+			<column name="UPLOAD_DATE">
+				<comment>上传时间</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

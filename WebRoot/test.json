@@ -1,0 +1,27 @@
+{
+    "page":1,
+    "total":1,
+    "records":2,
+    "rows":[
+        {
+            "category":"通知",
+            "createDate":"2010-04-29 12:43:38",
+            "id":3,
+            "infoContent":"5.1劳动节放假3天：5.1~5.3",
+            "infoLabel":"劳动节",
+            "modifyDate":"",
+            "title":"5.1劳动节放假通知",
+            "venueId":1
+        },
+        {
+            "category":"wef",
+            "createDate":"2010-04-20 10:53:22",
+            "id":2,
+            "infoContent":"fw",
+            "infoLabel":"wfwe",
+            "modifyDate":"",
+            "title":"dsfsdf",
+            "venueId":1
+        }
+    ]
+}

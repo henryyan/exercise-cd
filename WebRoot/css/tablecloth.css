@@ -1,0 +1,40 @@
+/*
+
+	TableCloth
+	by Alen Grakalic, brought to you by cssglobe.com
+
+*/ /* general styles */ /* tablecloth styles */
+table {
+	background-color: #FFFFFF;
+	font-size: 12px;
+	border: 1px solid white;
+}
+
+th {
+	background: #aa6c31;
+	color: #FFFFFF;
+}
+
+.even {
+	height: 28px;
+	background: #00571d;
+}
+
+.odd {
+	height: 28px;
+	background: #009b43;
+}
+
+td {
+	color: #FFFFFF;
+}
+
+.row th {
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.row td {
+	border-right: 1px solid white;
+	border-bottom: 1px solid white;
+}

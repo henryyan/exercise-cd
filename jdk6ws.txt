@@ -1,0 +1,8 @@
+http://192.168.1.163:9999/axis/venue?wsdl
+wsimport -p com.runchain.exercise.admin.web.venue.wc  -keep http://192.168.1.163:9999/axis/venue?wsdl
+wsimport -p com.runchain.exercise.admin.web.venue.wc  -keep http://127.0.0.1:9999/axis/venue?wsdl
+wsimport -p com.runchain.exercise.admin.web.venue.wc  -keep http://192.168.0.101:9999/axis/venue?wsdl
+wsimport -p com.runchain.exercise.admin.web.venue.wc -keep http://192.168.1.163:9998/axis.exercise/venue?wsdl
+http://114.94.121.2:9999/axis/venue?wsdl
+http://118.126.4.171:9998/axis.exercise/venue?wsdl
+wsimport -p com.runchain.exercise.admin.web.venue.wc -keep http://118.126.4.171:9998/axis.exercise/venue?wsdl

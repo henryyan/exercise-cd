@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="imagetoolbar" content="no">
+
+		<link rel="stylesheet" type="text/css" href="../css/global.css" />
+		<link rel="stylesheet" type="text/css" href="../css/tablecloth.css" />
+		<link type="text/css" rel="stylesheet" href="../css/all.css" />
+
+		<script type="text/javascript" src="../common/js/jquery-last.js"></script>
+		<script type="text/javascript" src="../common/js/common.js"></script>
+		<script type="text/javascript" src="js/fieldInfo.js"></script>
+    </head>
+    <body>
+		<table border="0" width="50%" cellspacing="0" align="center" id="row" class="row">
+			<input type="hidden" id="id"/>
+			<input type="hidden" id="fieldType"/>
+			<tr>
+				<td class="label">场地类型：</td>
+				<td><input type="text" id="zhType" readonly="readonly"/></td>
+			</tr>
+			<tr>
+				<td class="label">场地环境：</td>
+				<td><input type="text" id="envType" readonly="readonly"/></td>
+			</tr>
+			<tr>
+				<td class="label">场地编号：</td>
+				<td><input type="text" id="fieldCode"/></td>
+			</tr>
+			<tr>
+				<td class="label">场地名称：</td>
+				<td><input type="text" id="name"/></td>
+			</tr>
+			<tr>
+				<td class="label">场地状态：</td>
+				<td>
+					<input type="radio" id="status1" name="status" value="启用"/><label for="status1">启用</label>
+					<input type="radio" id="status2" name="status" value="维护"/><label for="status2">维护</label>
+					<input type="radio" id="status3" name="status" value="关闭"/><label for="status3">关闭</label>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="button" id="submit" value="提 交"/>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" id="back" value="返回场地列表"/>
+				</td>
+			</tr>
+		</table>
+    </body>
+</html>

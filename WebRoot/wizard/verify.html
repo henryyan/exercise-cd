@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <title>感谢您注册51锻炼</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="../common/js/jquery-last.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// 先退出再跳转到登录页面
+				$('#logout').click(function(){
+					$.post('../logout.do', function(req){
+						location.href = "../index.jsp";
+					});
+				});
+			});
+		</script>
+    </head>
+    <body>
+        <p>请等待客服专员为您开通服务，或致电XXXX直接与客服人员联系！</p>
+		<b><a href="javascript:;" id="logout">返回登录页面</a></b>
+    </body>
+</html>

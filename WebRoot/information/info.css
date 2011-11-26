@@ -1,0 +1,85 @@
+body {
+	padding-right: 10px;
+}
+
+/* 模块标题  */
+.pageHead h2{
+	margin: 10px 0 0 0;
+}
+
+/* 操作 */
+.operation {
+	display: block;
+	padding: 5px 20px 10px 0;
+	text-align: right;
+}
+
+.ed {
+	font-size: 13px;
+	text-align: right;
+}
+
+/* 信息块 */
+.singleInfo {
+	border-top: 1px solid #3B5998;
+	padding-bottom: 10px;
+	display: none;
+}
+
+/* 头部 */
+.singleInfo .infoHead {
+	background-color: #EFEFEF;
+	border-bottom: 1px solid #D8DFEA;
+}
+
+/* 标题 */
+.singleInfo .title {
+	display: block;
+	line-height: 19px;
+	padding: 3px 0 0 5px;
+	cursor: pointer;
+	font-size: 18px;
+}
+.singleInfo a {
+	color: #336699;
+	text-decoration: underline;
+}
+
+/* 日期、分类  */
+.singleInfo .infoHead .info {
+	color: #666666;
+	font-size: 14px;
+	line-height: 19px;
+	padding-left: 5px;
+}
+
+.singleInfo .infoHead .edit {
+	padding-left: 5px;
+}
+
+.singleInfo .infoHead .edit a{
+	color: #336699;
+	text-decoration: underline;
+}
+
+/* 内容 */
+.singleInfo .infoContent {
+	font-size: 13px;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #EFEFEF;
+	padding: 5px 0px 5px 15px;
+	color: #000000;
+	line-height: 16px;
+}
+
+/* 搜索 */
+.query {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* 分页 */
+#pageBar{
+	font-size: 14px;
+	line-height: 19px;
+}
