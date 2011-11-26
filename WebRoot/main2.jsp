@@ -89,6 +89,14 @@ Copyright:
           </li>
         </ul>
         <ul class="sc">
+          <li class="sc-title">零售商品</li>
+          <li>
+            <ul style="margin-left:-20px;">
+              <li class="sc-item"><a href='retail/retailGoodsList.jsp'>商品管理</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="sc">
           <li class="sc-title">场地报表查阅</li>
           <li>
             <ul style="margin-left:-20px;">

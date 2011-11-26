@@ -116,6 +116,16 @@
     <bean name="/member/loadCardType" parent="memberCardActionTemplate"/>
 	<bean name="/member/cardUsageRecordList" parent="memberCardActionTemplate"/>
 	<bean name="/member/loadCardUsageDetail" parent="memberCardActionTemplate"/>
+	
+	<!--====================================================================-->
+    <!--================================零售商品管理==========================-->
+    <!--====================================================================-->
+    <bean name="retailGoodsActionTemplate" singleton="false"
+    	class="net.yanhl.retail.action.RetailGoodsAction" parent="baseActionTemplate">
+    </bean>
+    <bean name="/retail/retailGoodsList" parent="retailGoodsActionTemplate"/>
+    <bean name="/retail/saveRetailGoods" parent="retailGoodsActionTemplate"/>
+    <bean name="/retail/checkRepeatRetailName" parent="retailGoodsActionTemplate"/>
 
 	<!--====================================================================-->
     <!--==================================报表系统==========================-->
@@ -173,6 +183,7 @@
             	<value>/report/*</value>
             	<value>/tactics/*</value>
             	<value>/information/*</value>
+            	<value>/retail/*</value>
             </list>
 	    </property>
         <property name="interceptorNames">

@@ -130,6 +130,11 @@
 			<forward name="cardUsageRecordList" path="/member/cardUsageRecordList.jsp"></forward>
 		</action>
 		<action path="/member/loadCardUsageDetail" scope="request" parameter="loadCardUsageDetail" />
+		
+		<!-- ============================ 零售商品管理 ============================-->
+		<action path="/retail/retailGoodsList" scope="request" parameter="retailGoodsList" />
+		<action path="/retail/saveRetailGoods" scope="request" parameter="saveRetailGoods" />
+		<action path="/retail/checkRepeatRetailName" scope="request" parameter="checkRepeatRetailName" />
 
 		<!-- ============================ 报表系统 ============================-->
 		<action path="/report/reportDaily" scope="request" parameter="reportDaily" />

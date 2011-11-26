@@ -33,7 +33,8 @@ import org.apache.struts.actions.MappingDispatchAction;
 */
 public class BaseAction extends MappingDispatchAction {
 
-	static Log log = LogFactory.getLog(BaseAction.class);
+	protected Log log = LogFactory.getLog(getClass());
+	private static Log staticLog = LogFactory.getLog(BaseAction.class);
 
 	public static final String RESPONSE_ERROR = SysConstants.RESPONSE_ERROR;
 	public static final String RESPONSE_SUCCESS = SysConstants.RESPONSE_SUCCESS;
@@ -314,9 +315,9 @@ public class BaseAction extends MappingDispatchAction {
 					jsonObject.accumulate(key, values);
 				}
 			}
-			log.debug("从客户端获得json=" + jsonObject.toString());
+			staticLog.debug("从客户端获得json=" + jsonObject.toString());
 		} catch (Exception e) {
-			log.error("获取json数据出错，错误信息如下：\n\t" + e.getMessage());
+			staticLog.error("获取json数据出错，错误信息如下：\n\t" + e.getMessage());
 			e.printStackTrace();
 			throw e;
 		}

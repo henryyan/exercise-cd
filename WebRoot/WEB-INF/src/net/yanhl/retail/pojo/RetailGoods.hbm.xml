@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="net.yanhl.retail.pojo.RetailGoods" table="t_retail_goods">
+    	<comment>零售品管理</comment>
+        <id name="id" type="java.lang.Long" unsaved-value="0">
+            <column name="id" />
+            <generator class="increment" />
+        </id>
+        <property name="venueId" type="java.lang.Long">
+            <column name="VENUE_ID">
+                <comment>场馆ID</comment>
+            </column>
+        </property>
+        <property name="createDate" type="java.sql.Date">
+            <column name="create_date">
+            	<comment>登记日期</comment>
+            </column>
+        </property>
+        <property name="retailName" type="java.lang.String">
+            <column name="retail_name" length="100">
+            	<comment>货品名称</comment>
+            </column>
+        </property>
+        <property name="price" type="java.lang.Float">
+            <column name="price">
+            	<comment>价格</comment>
+            </column>
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="description">
+            	<comment>货品描述</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
